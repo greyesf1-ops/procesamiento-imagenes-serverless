@@ -28,7 +28,7 @@ La clave de salida es determinista y sus metadatos conservan el ETag del origen.
 Requiere Node.js 20 o superior.
 
 ```bash
-npm ci
+npm install
 npm run verify
 ```
 
@@ -37,14 +37,18 @@ npm run verify
 ## Despliegue en AWS CloudShell
 
 1. Seleccionar la región `us-east-2`.
-2. Subir `dist/cloudshell-deploy.zip` a CloudShell.
+2. Clonar el repositorio público y construir el paquete dentro de CloudShell.
 3. Ejecutar:
 
 ```bash
-unzip -o cloudshell-deploy.zip -d serverless-images
-cd serverless-images
-chmod +x deploy-aws.sh
-./deploy-aws.sh
+git clone https://github.com/greyesf1-ops/procesamiento-imagenes-serverless.git
+cd procesamiento-imagenes-serverless
+npm install
+npm run verify
+chmod +x scripts/deploy-aws.sh
+LAMBDA_ZIP=dist/lambda.zip \
+SAMPLE_IMAGE=samples/paisaje-demo-original.jpg \
+./scripts/deploy-aws.sh
 ```
 
 El script crea un bucket privado, cifrado y versionado; un rol IAM limitado a leer `originals/`, escribir/consultar `resized/` y registrar logs; la función Lambda; el permiso de invocación; y la notificación de S3 filtrada por prefijo. Finalmente carga la muestra para comprobar el flujo de extremo a extremo.
@@ -79,4 +83,3 @@ docs/arquitectura.svg        Diagrama de la arquitectura
 ## Costos y limpieza
 
 La práctica utiliza servicios de pago por uso. Para evitar costos posteriores, elimine los objetos y recursos de la práctica desde la cuenta de AWS cuando ya no necesite conservar la evidencia.
-
