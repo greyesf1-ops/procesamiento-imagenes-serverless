@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+.env
+deployment-info.*
+evidencias/aws/
+output/pdf/
+tmp/
+
