@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="600" viewBox="0 0 1400 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426"/>
+      <stop offset="1" stop-color="#11243f"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#ff9900"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="600" rx="30" fill="url(#bg)"/>
+  <text x="700" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#f8fafc">Arquitectura serverless orientada a eventos</text>
+  <text x="700" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#a9bad1">Amazon S3 + AWS Lambda + Amazon CloudWatch</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="185" width="245" height="220" rx="22" fill="#fff"/>
+    <circle cx="192" cy="250" r="38" fill="#e8f3ff"/>
+    <path d="M174 261h36M192 232v58M179 245l13-13 13 13" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="192" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#14213d">Usuario</text>
+    <text x="192" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#52647d">Carga JPEG o PNG</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="410" y="185" width="260" height="220" rx="22" fill="#fff"/>
+    <path d="M485 226h110v76H485z" fill="#e05243"/>
+    <path d="M485 246h110M485 278h110M515 226v76M565 226v76" stroke="#fff" stroke-width="4" opacity="0.8"/>
+    <text x="540" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#14213d">S3 / originals/</text>
+    <text x="540" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#52647d">Conserva el original</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="770" y="185" width="260" height="220" rx="22" fill="#fff"/>
+    <rect x="850" y="222" width="100" height="86" rx="12" fill="#ff9900"/>
+    <path d="M884 244l-17 21 17 21M916 244l17 21-17 21" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="900" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#14213d">AWS Lambda</text>
+    <text x="900" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#52647d">TypeScript · 800 × 600</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1130" y="185" width="210" height="220" rx="22" fill="#fff"/>
+    <path d="M1180 226h110v76h-110z" fill="#3f8624"/>
+    <path d="M1180 246h110M1180 278h110M1210 226v76M1260 226v76" stroke="#fff" stroke-width="4" opacity="0.8"/>
+    <text x="1235" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#14213d">S3 / resized/</text>
+    <text x="1235" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#52647d">Resultado automático</text>
+  </g>
+
+  <line x1="315" y1="295" x2="400" y2="295" stroke="#ff9900" stroke-width="7" marker-end="url(#arrow)"/>
+  <line x1="670" y1="295" x2="760" y2="295" stroke="#ff9900" stroke-width="7" marker-end="url(#arrow)"/>
+  <line x1="1030" y1="295" x2="1120" y2="295" stroke="#ff9900" stroke-width="7" marker-end="url(#arrow)"/>
+  <text x="715" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#ffd28a">ObjectCreated</text>
+
+  <rect x="500" y="470" width="400" height="74" rx="18" fill="#1d3557" stroke="#527aa8"/>
+  <text x="700" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#f8fafc">Amazon CloudWatch Logs</text>
+  <text x="700" y="529" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#b9c8db">inicio · dimensiones · resultado · errores</text>
+  <path d="M900 405 C900 455 870 475 835 480" stroke="#7fb3e8" stroke-width="4" stroke-dasharray="9 8" fill="none" marker-end="url(#arrow)"/>
+</svg>
+
