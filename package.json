@@ -1,0 +1,33 @@
+{
+  "name": "procesamiento-imagenes-serverless",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Procesamiento automático de imágenes con Amazon S3, AWS Lambda y TypeScript.",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist coverage",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=cjs --outfile=dist/index.js --sourcemap --minify",
+    "package": "npm run build && cd dist && zip -q -j lambda.zip index.js",
+    "sample": "tsx scripts/create-sample.ts",
+    "bundle:cloudshell": "npm run package && npm run sample && cd dist && zip -q -j cloudshell-deploy.zip lambda.zip ../scripts/deploy-aws.sh ../samples/paisaje-demo-original.jpg",
+    "verify": "npm run typecheck && npm test && npm run bundle:cloudshell"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.883.0",
+    "jimp": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.152",
+    "@types/node": "^22.18.1",
+    "esbuild": "^0.25.9",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
